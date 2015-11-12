@@ -1,0 +1,497 @@
+/**************************************
+	COLOUR PALETTE
+**************************************/
+
+$primary1a: rgba(56,54,56,1); /*dark grey*/
+$primary1b: rgba(56,54,56,0.9); /*dark grey transparent*/
+$primary1c: rgba(56,54,56,0.6); /*dark grey transparent*/
+$primary2: rgba(171,183,186,1); /*med grey*/
+$primary3: rgba(171,183,186,1); /*light grey*/
+$primary3a: rgba(171,183,186,0.6); /*light grey transparent*/
+$primary4a: rgba(202,209,210,1);/*off white*/
+$primary4b: rgba(202,209,210,0.6);/*off white transparent*/
+$primary5: rgba(255,255,255,1);/*white*/
+$primary6: rgba(240,244,242,1);
+$highlight1: rgba(229,57,203,1); /*fushia*/
+$highlight2: rgba(224,98,178,1); /*light pink*/
+
+/**************************************
+	MIXINS
+**************************************/
+
+/**************************************
+	MEASUREMENTS
+**************************************/
+
+$screen-xs-max: 768px;
+$screen-sm-max: 992px;
+
+/**************************************
+	GENERAL
+**************************************/
+
+.element { /*vertically aligns elements*/
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper {
+	width: 100%;
+}
+
+/**************************************
+	INDEX PAGE
+**************************************/
+
+//NAV BAR - appears when scroll past the header
+	
+.navbar {
+	display: none;
+
+	.name {
+		text-transform: uppercase;
+	 	
+	 	@media screen and (max-width: 767px) {
+	 		display: none;
+	 	}
+
+	 	li {
+	 		a {
+	 			color: $primary2;
+
+	 			&:hover {
+	 			color: $highlight1;
+	 			}
+	 		}
+	 	}
+	}
+
+	.logo {
+
+		.logo-cont {
+			width: 30px;
+			margin: 0 auto;
+			padding-top: 10px;
+
+			img {
+				width: 100%;
+			}
+
+		}
+	}
+
+	.nav-links {
+		//border: red 1px solid;
+
+		.nav-link-items {
+			padding: 0;
+			padding-top: 15px;
+			float: right;
+
+			li {
+				list-style: none;
+				display: inline-block;
+
+				a {
+					text-transform: uppercase;
+					text-decoration: none;
+					color: $primary2;
+					padding: 5px;
+
+					&:hover {
+						color: $highlight1;
+					}
+				}
+
+				.selected {
+					color: $primary2;
+				}
+			}
+		}
+
+	}
+}
+
+
+//HEADER
+
+.header {
+	height: 100vh;
+	background-color: $highlight2;
+	background-image: url('img/mac.jpeg');
+	background-size: cover;
+	background-position: center;
+
+	.name {
+		height: 100%;
+		text-align: right;
+		background: $primary1c;
+
+		.name-cont {
+			min-height: 200px;
+			margin-left: 15px;
+
+			h1 {
+				margin-top: 0px;
+				margin-bottom: 10px;
+				color: white;
+				text-transform: uppercase;
+				font-size: 50px;
+			}
+
+			p {
+				color: white;
+			}
+
+			.button {
+				background: rgba(255, 255, 255, 0.3);
+				border: 2px solid white;
+				text-transform: uppercase;
+				margin-top: 20px;
+				padding: 10px 20px;
+				width: 200px;
+				float: right;
+
+				a {
+					text-decoration: none;
+					font-size: 20px;
+					color: white;
+
+				}
+			}
+
+			button:hover {
+				background: rgba(255, 255, 255, 0.3);
+				border: 2px solid $highlight2;
+
+				a {
+					color: $highlight2;
+				} 
+			}
+		}
+	}
+	.navbar-cont {
+		background-color: $primary1b;
+		height: 100%;
+		display:none;
+
+		@media (min-width: $screen-sm-max){
+			display: initial;
+
+			nav {
+				min-height: 200px;
+				text-align: left;
+				margin-right: 15px;
+				padding-top: 30px;
+
+				.nav-links {
+					list-style-type: none;
+					margin-bottom: 50px;
+
+
+					li {
+						padding-bottom: 4px;
+
+						.active {
+							color: $highlight1;
+						}
+
+						a {
+							color: $primary4a;
+						}
+
+						a:hover {
+							color: $primary3;
+							text-decoration: none;
+						}	
+					}				
+				}
+
+				.social-links {
+					list-style-type: none;
+
+					li {
+						padding-bottom: 4px;
+
+						.active {
+							color: $highlight1;
+						}
+
+						a {
+							color: $primary4a;
+						}
+
+						a:hover {
+							color: $primary3;
+							text-decoration: none;
+						}	
+					}	
+				}
+
+			}
+		}
+	}
+}
+
+//PORTFOLIO
+
+.port-wrapper {
+	border-bottom: 1px solid $primary3;
+	background: $primary6;
+
+	.portfolio {
+		padding: 50px 0px;
+
+		.port-cont {
+			padding: 25px 0px;
+
+			.port-item {
+				width: 350px;
+				height: 250px;
+				margin: 0 auto;
+				transition: height 0.3s, width 0.3s;
+
+				@media (min-width: $screen-sm-max) {
+					width: 450px;
+					height: 320px;
+
+					}
+
+
+				.overlay {
+					background: $primary1b;
+					height: 100%;
+					padding-top: 150px;
+					opacity: 0;
+					transition: opacity 0.5s;
+
+					@media (max-width: $screen-sm-max) {
+						display: none;
+
+					}
+
+					span {
+						h1 {
+							margin: 0;
+							color: $primary5;
+							text-align: center;
+						}
+
+					}
+				}
+
+				.overlay:hover {
+					opacity: 1;
+
+				}
+			}
+
+			.port-item-1 {
+				background: url('img/SDSB.png');
+				background-size: cover;
+			}
+
+			.port-item-2 {
+				background: url('img/portfolio.png');
+				background-size: cover;
+			}
+
+			.port-caption {
+				width: 350px;
+				margin: 0 auto;
+				text-align: center;
+
+				@media (min-width: $screen-sm-max) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.tea {
+		width: 250px;
+		margin: 0 auto;
+
+		@media (min-width: $screen-sm-max) {
+			padding-left: 50px;
+			width: 400px;
+			margin: 0;
+			margin-left: 50px;
+		}
+		
+		img {
+			width: 100%;
+			position: relative;
+			right: 0;
+			top: 32px;
+
+			@media (min-width: 991px) {
+				top: 43px;
+			}
+
+		}
+	}
+}
+
+//ABOUT
+
+.about-content {
+	padding-top: 100px;
+
+	.header-img {
+
+	 	.img-cont{
+	 		width: 40%;
+			min-width: 200px;
+			max-width: 350px;
+			margin: 0 auto;
+			margin: 40px 0px;
+
+			@media screen and (min-width: 767px) {
+		 		float: right;
+		 	}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.about-text {
+		padding: 0px 20px 80px 20px;
+
+		@media screen and (min-width: 767px) {
+	 		padding: 0px 50px 40px 20px;
+	 	}
+
+	 	img {
+	 		width: 100%;
+	 		margin-bottom: 20px;
+	 	}
+
+
+	}
+
+	.skills-box {
+		background: $primary2;
+		padding: 40px 20px 40px 20px;
+
+		@media screen and (min-width: 767px) {
+	 		padding: 40px 20px 62px 20px;
+	 	}
+
+		h3 {
+			padding-bottom: 20px;
+		}
+
+		.skill {
+			background: white;
+			border-radius: 5px;
+			display: inline-block;
+			padding: 8px;
+			margin-bottom: 10px;
+
+			p {
+				padding: 0;
+				margin: 0;
+				line-height: 1;
+			}
+		}
+	}
+}
+
+//SOCIAL
+
+.social-wrap {
+	background-color: $highlight1;; 
+	background-image: url('img/beach.jpeg');
+	background-size: cover;
+	background-position: center bottom;
+	height: 350px;
+		.overlay {
+			background: $primary1b;
+			height: 100%;
+
+			.social-box {
+				
+
+				h1 {
+					text-align: center;
+					padding: 90px 0px 20px 0px;
+					color: $primary4a;
+					text-transform: uppercase;
+
+				}
+			}
+		}
+	}
+
+.coffee {
+	width: 100px;
+	height: 0px;
+	display: block;
+	float: right;
+	margin-right: 30px;
+	@media (min-width: $screen-sm-max) {
+		width: 150px;
+	}
+
+	img {
+		width: 100%;
+		position: relative;
+		z-index: 20;
+		top:-105px;
+		@media (min-width: $screen-sm-max) {
+			top: -158px;
+		}
+	}
+}
+
+//CONTACT
+
+.contact-wrap {
+	//border: 1px solid red;
+	padding: 50px 0px;
+
+	.contact-cont {
+		//border: 1px solid red;
+
+	}
+}
+
+//FOOTER
+
+footer {
+	text-align: center;
+	color: $primary3;
+
+	p {
+		a {
+			text-decoration: none;
+			color: $primary3;
+		}
+	}
+}
+	
+/**************************************
+	SDS FEATURE PAGE
+**************************************/
+
+
+.feature-imgs {
+	padding: 0;
+	
+	.SDS-feature {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.feature-text {
+	background-color: $primary1a;
+	color: white;
+	min-height: 100vh;
+
+}
