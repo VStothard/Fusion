@@ -33,38 +33,38 @@
 /**************************************
 	INDEX PAGE
 **************************************/
-.navbar {
+.scroll-navbar {
   display: none; }
-  .navbar .name {
+  .scroll-navbar .name {
     text-transform: uppercase; }
     @media screen and (max-width: 767px) {
-      .navbar .name {
+      .scroll-navbar .name {
         display: none; } }
-    .navbar .name li a {
+    .scroll-navbar .name li a {
       color: #abb7ba; }
-      .navbar .name li a:hover {
+      .scroll-navbar .name li a:hover {
         color: #e539cb; }
-  .navbar .logo .logo-cont {
+  .scroll-navbar .logo .logo-cont {
     width: 30px;
     margin: 0 auto;
     padding-top: 10px; }
-    .navbar .logo .logo-cont img {
+    .scroll-navbar .logo .logo-cont img {
       width: 100%; }
-  .navbar .nav-links .nav-link-items {
+  .scroll-navbar .nav-links .nav-link-items {
     padding: 0;
     padding-top: 15px;
     float: right; }
-    .navbar .nav-links .nav-link-items li {
+    .scroll-navbar .nav-links .nav-link-items li {
       list-style: none;
       display: inline-block; }
-      .navbar .nav-links .nav-link-items li a {
+      .scroll-navbar .nav-links .nav-link-items li a {
         text-transform: uppercase;
         text-decoration: none;
         color: #abb7ba;
         padding: 5px; }
-        .navbar .nav-links .nav-link-items li a:hover {
+        .scroll-navbar .nav-links .nav-link-items li a:hover {
           color: #e539cb; }
-      .navbar .nav-links .nav-link-items li .selected {
+      .scroll-navbar .nav-links .nav-link-items li .selected {
         color: #abb7ba; }
 
 .header {
@@ -289,14 +289,67 @@ footer {
 /**************************************
 	SDS FEATURE PAGE
 **************************************/
-.feature-imgs {
-  padding: 0; }
-  .feature-imgs .SDS-feature img {
+.page-nav .name {
+  text-transform: uppercase; }
+  @media screen and (max-width: 767px) {
+    .page-nav .name {
+      display: none; } }
+  .page-nav .name li a {
+    color: #abb7ba; }
+    .page-nav .name li a:hover {
+      color: #e539cb; }
+.page-nav .logo .logo-cont {
+  width: 30px;
+  margin: 0 auto;
+  padding-top: 10px; }
+  .page-nav .logo .logo-cont img {
     width: 100%; }
+.page-nav .nav-links .nav-link-items {
+  padding: 0;
+  padding-top: 15px;
+  float: right; }
+  .page-nav .nav-links .nav-link-items li {
+    list-style: none;
+    display: inline-block; }
+    .page-nav .nav-links .nav-link-items li a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #abb7ba;
+      padding: 5px; }
+      .page-nav .nav-links .nav-link-items li a:hover {
+        color: #e539cb; }
+    .page-nav .nav-links .nav-link-items li .selected {
+      color: #abb7ba; }
 
-.feature-text {
+.page-header {
+  background-color: #e539cb;
+  background-image: url("img/beach.jpeg");
+  background-size: cover;
+  background-position: center bottom;
+  height: 350px;
+  padding: 0;
+  margin-bottom: 0px;
+  border: none; }
+  .page-header .overlay {
+    background: rgba(56, 54, 56, 0.9);
+    height: 100%; }
+    .page-header .overlay .header-box h1 {
+      text-align: center;
+      padding: 100px 0px 10px 0px;
+      color: white;
+      text-transform: uppercase; }
+    .page-header .overlay .header-box h2 {
+      text-align: center;
+      padding: 00px 0px 20px 0px;
+      color: #cad1d2;
+      font-size: 20px; }
+
+.content-wrapper .content-cont .content-row .text-cont {
+  height: 100%;
+  min-height: 100vh;
   background-color: #383638;
-  color: white;
-  min-height: 100vh; }
+  padding: 50px 10px 40px 10px; }
+.content-wrapper .content-cont .content-row .img-cont {
+  padding: 40px 20px; }
 
 /*# sourceMappingURL=main.css.map */

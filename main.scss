@@ -19,36 +19,7 @@ $highlight2: rgba(224,98,178,1); /*light pink*/
 	MIXINS
 **************************************/
 
-/**************************************
-	MEASUREMENTS
-**************************************/
-
-$screen-xs-max: 768px;
-$screen-sm-max: 992px;
-
-/**************************************
-	GENERAL
-**************************************/
-
-.element { /*vertically aligns elements*/
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.wrapper {
-	width: 100%;
-}
-
-/**************************************
-	INDEX PAGE
-**************************************/
-
-//NAV BAR - appears when scroll past the header
-	
-.navbar {
-	display: none;
-
+@mixin skinnyNav {
 	.name {
 		text-transform: uppercase;
 	 	
@@ -111,6 +82,38 @@ $screen-sm-max: 992px;
 		}
 
 	}
+}
+
+/**************************************
+	MEASUREMENTS
+**************************************/
+
+$screen-xs-max: 768px;
+$screen-sm-max: 992px;
+
+/**************************************
+	GENERAL
+**************************************/
+
+.element { /*vertically aligns elements*/
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper {
+	width: 100%;
+}
+
+/**************************************
+	INDEX PAGE
+**************************************/
+
+//NAV BAR - appears when scroll past the header
+	
+.scroll-navbar {
+	display: none;
+	@include skinnyNav;
 }
 
 
@@ -479,19 +482,71 @@ footer {
 **************************************/
 
 
-.feature-imgs {
+.page-nav {
+	@include skinnyNav;
+}
+
+.page-header {
+	background-color: $highlight1;; 
+	background-image: url('img/beach.jpeg');
+	background-size: cover;
+	background-position: center bottom;
+	height: 350px;
 	padding: 0;
+	margin-bottom: 0px;
+	border: none;
+		.overlay {
+			background: $primary1b;
+			height: 100%;
+
+			.header-box {
+				h1 {
+					text-align: center;
+					padding: 100px 0px 10px 0px;
+					color: $primary5;
+					text-transform: uppercase;
+
+				}
+				h2 {
+					text-align: center;
+					padding: 00px 0px 20px 0px;
+					color: $primary4a;
+					font-size: 20px;
+				}
+			}
+		}
 	
-	.SDS-feature {
-		img {
-			width: 100%;
+}
+
+.content-wrapper {
+
+
+	.content-cont {
+
+
+		.content-row {
+
+
+			.text-cont {
+				height: 100%;
+				min-height: 100vh;
+				background-color: $primary1a;
+				padding: 50px 10px 40px 10px;
+
+				h1 {
+
+				}
+				
+			}
+
+			.img-cont {
+				padding: 40px 20px;
+
+
+				
+				
+			}
 		}
 	}
 }
 
-.feature-text {
-	background-color: $primary1a;
-	color: white;
-	min-height: 100vh;
-
-}
